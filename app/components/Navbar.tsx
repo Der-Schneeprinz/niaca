@@ -24,7 +24,7 @@ function Navbar() {
         <nav className='pr-2 py-1 align-right'>
             <NavList>
                 <NavItem ref='/' className='font-black'>NIACA</NavItem>
-                {getNavList.map((item) => <NavItem className={"bg-"+ item.color} key={item.name} ref={item.name}>{item.name}</NavItem>)}
+                {getNavList.map((item) => <NavItem className={"bg-"+ item.color + " rounded hover:border-orange-800"} key={item.name} ref={item.name}>{item.name}</NavItem>)}
             </NavList>
         </nav>
     )

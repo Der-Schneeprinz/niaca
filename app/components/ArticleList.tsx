@@ -2,7 +2,7 @@ import { desc } from 'motion/react-client'
 import Link from 'next/link'
 import React, { ReactNode } from 'react'
 
-interface ArticleItemProps {
+interface ArticleListProps {
     children: ReactNode,
     className: string,
     props: {
@@ -10,7 +10,7 @@ interface ArticleItemProps {
     }
 }
 
-function ArticleItem({children, className}: ArticleItemProps) {
+function ArticleList({children, className}: ArticleListProps) {
 
     const getArticles = [
         {
@@ -26,7 +26,7 @@ function ArticleItem({children, className}: ArticleItemProps) {
     ]
     
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col pt-4'>
             { getArticles.map((item) => 
                 <Link href={"/articles"} key={item.title} className="flex px-4 py-1">
                     <aside className='pt-1 text-gray-500' key={item.year}>{item.year}</aside>
@@ -40,4 +40,4 @@ function ArticleItem({children, className}: ArticleItemProps) {
     )
 }
 
-export default ArticleItem
+export default ArticleList

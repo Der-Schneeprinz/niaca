@@ -8,6 +8,17 @@
     Graphite       #2f2f2f
 */
 
+.geist {
+  font-family: "Geist", sans-serif;
+}
+
+.geist-mono {
+  font-family: "Geist Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: inherit;
+  font-style: normal;
+}
+
 :root, *, *::before, *::after {
     --brick-ember: #d00000;
     --amber-flame: #ffba08;
@@ -21,6 +32,20 @@
     --color-foreground: var(--foreground);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+
+    --animate-bounce: bounce 0.5s ease-in-out once;
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+            40% {
+            transform: translateY(-30px);
+        }
+            60% {
+            transform: translateY(-15px);
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,22 +55,45 @@
     }
 }
 
+@media (prefers-color-scheme: light) {
+    :root, *, *::before, *::after {
+        background-color: var(--background);
+        color: var(--foreground);
+    }
+}
+
 body {
     --background: #e5e7e6;
     --foreground: #2f2f2f;
-    background: var(--background);
+    background-color: var(--background);
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .bg-red:hover {
-    color: var(--brick-ember);
+    background-color: var(--brick-ember);
+    color: var(--background);
+    transform: scale(1.05);
 }
 
 .bg-yellow:hover {
-    color: var(--amber-flame);
+    background-color: var(--amber-flame);
+    color: var(--background);
+    transform: scale(1.05);
 }
 
 .bg-blue:hover {
-    color: var(--steal-blue);
+    background-color: var(--steal-blue);
+    color: var(--background);
+    transform: scale(1.05);
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
 }

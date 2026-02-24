@@ -9,8 +9,11 @@ interface NavItemProps {
 
 function NavItem({children, className, ref}: NavItemProps) {
     return (
-        <ul className={'p-2 '}>
-            <Link href={"/" + ref} className={className}>
+        <ul className={'p-2 select-none font-bold hover:animate-(--bounce) ' + className}>
+            <Link href={"/" + ref} style={{
+                color: "inherit",
+                background: "inherit"
+            }}>
                 {children}
             </Link>
         </ul>
