@@ -1,5 +1,5 @@
 ---
-id: "1"
+id: "article1"
 title: "Cultural Identity - What Does It Mean to Be Filipino?"
 time: "20-02-2026"
 ---
